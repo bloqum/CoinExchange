@@ -1,0 +1,130 @@
+aliyun:
+  mail-sms:
+#    access-key-id: '@aliyun.mail-sms.access-key-id@'
+#    access-secret: '@aliyun.mail-sms.access-secret@'
+#    from-address: '@aliyun.mail-sms.from-address@'
+#    from-alias: '@aliyun.mail-sms.from-alias@'
+#    region: '@aliyun.mail-sms.region@'
+#    sms-sign: '@aliyun.mail-sms.sms-sign@'
+#    sms-template: '@aliyun.mail-sms.sms-template@'
+    access-key-id: jcC9y3s110TrN0Hs
+    access-secret: Lrhrntpc11Os6jOw5qoCTm6YfUsbE4
+    email-tag: BIZZAN
+    from-address: service@bizzan.pro
+    from-alias: BIZZAN
+    region: cn-hangzhou
+    sms-sign: BIZZAN
+    sms-template: SMS_199285259
+es:
+  mine:
+    index: ''
+    type: ''
+  password: ''
+  port: 9200
+  private:
+    ip: '#'
+  public:
+    ip: ''
+  username: ''
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: '@eureka.client.serviceUrl.defaultZone@'
+      defaultZone: http://localhost:7000/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${server.port}
+    prefer-ip-address: true
+logging:
+  level:
+    '*': debug
+server:
+  port: 6005
+spring:
+  application:
+    name: service-exchange-trade
+  data:
+    jpa:
+      repositories:
+        enabled: true
+    mongodb:
+     # uri: '@spring.data.mongodb.uri@'
+     # uri: mongodb://123.56.31.118:27017/bizzan
+      database: bizzan
+      uri: mongodb://123.56.31.118:27017/bizzan
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      aop-patterns: com.lcf.service.*
+      filters: stat,wall,log4j
+      initialSize: 10
+      maxActive: 200
+      maxPoolPreparedStatementPerConnectionSize: 20
+      maxWait: 6000
+      minEvictableIdleTimeMillis: 6000
+      minIdle: 10
+      poolPreparedStatements: true
+      stat-view-servlet:
+        allow: ''
+        deny: ''
+        enabled: true
+#        login-password: '@druidlogin-password@'
+#        login-username: '@druidlogin-username@'
+        login-password: O245^v1sasddn87J1R
+        login-username: root
+        reset-enable: false
+        url-pattern: /druid/*
+      testOnBorrow: false
+      testOnReturn: false
+      testWhileIdle: true
+      timeBetweenEvictionRunsMillis: 6000
+      validationQuery: SELECT 1
+      web-stat-filter:
+        enabled: true
+        exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico
+        principal-cookie-name: cookie_name
+        principal-session-name: session_name
+        profile-enable: ''
+        session-stat-enable: true
+        session-stat-max-count: 10
+        url-pattern: /*
+   # password: '@spring.datasource.password@'
+    type: com.alibaba.druid.pool.DruidDataSource
+   # url: '@spring.datasource.url@'
+   # username: '@spring.datasource.username@'
+    password: qiuyu19921116
+    url: jdbc:mysql://127.0.0.1:3306/bizzan?characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+  devtools:
+    restart:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  kafka:
+   # bootstrap-servers: '@spring.kafka.bootstrap-servers@'
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      auto:
+        commit:
+          interval: 100
+        offset:
+          reset: earliest
+      concurrency: 9
+      enable:
+        auto:
+          commit: false
+      group:
+        id: default-group
+      maxPollRecordsConfig: 50
+      session:
+        timeout: 15000
+    producer:
+      batch:
+        size: 256
+      buffer:
+        memory: 1048576
+      linger: 1
+      retries: 3
+  session:
+    store-type: none

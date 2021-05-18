@@ -1,0 +1,50 @@
+eureka:
+  client:
+    fetchRegistry: false
+    registerWithEureka: false
+    serviceUrl:
+     # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:7000/eureka/
+  instance:
+#    hostname: ${spring.cloud.client.ipAddress}
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    hostname: eureka-server
+    instance-id: eureka-server:7000
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: true
+server:
+  port: 7000
+spark:
+  system:
+    #  admin-phones: '@spark.system.admin-phones@'
+    # admins: '@spark.system.admins@'
+    data-center-id: 1
+    #  host: '@spark.system.host@'
+    # name: '@spark.system.name@'
+    work-id: 1
+    admin-phones: ''
+    admins: xunibidev@gmail.com
+    host: smtp.gmail.com
+    name: BIZZAN
+spring:
+  mail:
+#    host: '@spring.mail.host@'
+#    password: '@spring.mail.password@'
+#    port: 465
+    host: smtp.gmail.com
+    password: thrtn4545dsfsfdbao
+    port: 465
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+          starttls:
+            enable: true
+            required: true
+#    username: '@spring.mail.username@'
+    username: bizzanex@gmail.com
+
+spring.freemarker.prefer-file-system-access: false

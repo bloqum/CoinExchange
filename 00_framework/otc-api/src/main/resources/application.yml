@@ -1,0 +1,146 @@
+aliyun:
+  mail-sms:
+    access-key-id: '@aliyun.mail-sms.access-key-id@'
+    access-secret: '@aliyun.mail-sms.access-secret@'
+    from-address: '@aliyun.mail-sms.from-address@'
+    from-alias: '@aliyun.mail-sms.from-alias@'
+    region: '@aliyun.mail-sms.region@'
+    sms-sign: '@aliyun.mail-sms.sms-sign@'
+    sms-template: '@aliyun.mail-sms.sms-template@'
+es:
+  mine:
+    index: '@es.mine.index@'
+    type: '@es.mine.type@'
+  password: '@es.password@'
+  port: '@es.port@'
+  private:
+    ip: '@es.private.ip@'
+  public:
+    ip: '@es.public.ip@'
+  username: '@es.username@'
+eureka:
+  client:
+    serviceUrl:
+     #defaultZone: '@eureka.client.serviceUrl.defaultZone@'
+      defaultZone: http://localhost:7000/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${server.port}
+    prefer-ip-address: true
+logging:
+  level:
+    '*': debug
+management:
+  #context-path: '@management.context-path@'
+  context-path: /monitor
+  security:
+   # enabled: '@management.security.enabled@'
+    enabled: false
+security:
+  user:
+    name: '@security.user.name@'
+    password: '@security.user.password@'
+server:
+  context-path: /otc
+  port: 6006
+spark:
+  system:
+    admin-phones: '@spark.system.admin-phones@'
+    admins: '@spark.system.admins@'
+    data-center-id: 1
+    host: '@spark.system.host@'
+    name: '@spark.system.name@'
+    work-id: 1
+spring:
+  application:
+    name: otc-api
+  data:
+    jpa:
+      repositories:
+        enabled: true
+    mongodb:
+      database: bizzan
+      uri: mongodb://123.56.31.118:27017/bizzan
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      filters: stat,wall,log4j
+      initialSize: 10
+      maxActive: 200
+      maxPoolPreparedStatementPerConnectionSize: 20
+      maxWait: 6000
+      minEvictableIdleTimeMillis: 6000
+      minIdle: 10
+      poolPreparedStatements: true
+      testOnBorrow: false
+      testOnReturn: false
+      testWhileIdle: true
+      timeBetweenEvictionRunsMillis: 6000
+      validationQuery: SELECT 1
+#    password: '@spring.datasource.password@'
+    type: com.alibaba.druid.pool.DruidDataSource
+#    url: '@spring.datasource.url@'
+#    username: '@spring.datasource.username@'
+    password: qiuyu19921116
+    url: jdbc:mysql://127.0.0.1:3306/bizzan?characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+  devtools:
+    restart:
+      enabled: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      indent_output: true
+    time-zone: GMT+8
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  kafka:
+#    bootstrap-servers: '@spring.kafka.bootstrap-servers@'
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      auto:
+        commit:
+          interval: 100
+        offset:
+          reset: earliest
+      concurrency: 9
+      enable:
+        auto:
+          commit: false
+      group:
+        id: default-group
+      maxPollRecordsConfig: 50
+      session:
+        timeout: 15000
+    producer:
+      batch:
+        size: 256
+      buffer:
+        memory: 1048576
+      linger: 1
+      retries: 0
+  mail:
+    host: '@spring.mail.host@'
+    password: '@spring.mail.password@'
+    port: '@spring.mail.port@'
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+          starttls:
+            enable: true
+            required: true
+    username: '@spring.mail.username@'
+  redis:
+    host: 127.0.0.1
+    #password: '@spring.redis.password@'
+    pool:
+      max-active: 300
+      max-idle: 100
+      max-wait: 6000
+      min-idle: 20
+    port: 6379
+    timeout: 30000

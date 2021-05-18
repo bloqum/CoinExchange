@@ -1,0 +1,95 @@
+access:
+  key:
+    id: ''
+    secret: ''
+aliyun:
+  accessKeyId: jcC9y3s110TrN0Hs
+  accessKeySecret: Lrhrntpc11Os6jOw5qoCTm6YfUsbE4
+  mail-sms:
+    access-key-id: jcC9y3s110TrN0Hs
+    access-secret: Lrhrntpc11Os6jOw5qoCTm6YfUsbE4
+    email-tag: BIZZAN
+    from-address: service@bizzan.pro
+    from-alias: BIZZAN
+    region: cn-hangzhou
+    sms-sign: BIZZAN
+    sms-template: SMS_199285259
+  ossBucketName: bizzanex
+  ossEndpoint: oss-cn-hangzhou.aliyuncs.com
+commission:
+  need:
+    real-name: 1
+  promotion:
+    second-level: 1
+druidlogin-password: O245^v1sasddn87J1R
+druidlogin-username: root
+es:
+  mine:
+    index: ''
+    type: ''
+  password: ''
+  port: 9092
+  private:
+    ip: '#'
+  public:
+    ip: ''
+  username: ''
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:7000/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${server.port}
+    prefer-ip-address: true
+logback:
+  path: ./logs
+management:
+  context-path: /monitor
+  security:
+    enabled: false
+person:
+  promote:
+    prefix: https://www.bizzan.pro/#/reg?code=
+security:
+  user:
+    name: test2
+    password: test112**3828**@#&@
+sms:
+  driver: saiyou
+  gateway: https://api.mysubmail.com/message/send.json
+  internationalGateway: ''
+  internationalPassword: ''
+  internationalUsername: ''
+  password: 50155d47f0b1sad1e7cf7e9029dd
+  sign: BIZZAN
+  username: 5f6ce0d8ef4545fb28dc
+spark:
+  system:
+    admin-phones: ''
+    admins: xunibidev@gmail.com
+    host: smtp.gmail.com
+    name: BIZZAN
+spring:
+  data:
+    mongodb:
+      database: bizzan
+      uri: mongodb://123.56.31.118:27017/bizzan
+  datasource:
+    password: qiuyu19921116
+    url: jdbc:mysql://127.0.0.1:3306/bizzan?characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+  mail:
+    host: smtp.gmail.com
+    password: thrtn4545dsfsfdbao
+    port: 465
+    username: bizzanex@gmail.com
+  redis:
+    host: 127.0.0.1
+    password: ''
+    port: 6379
+transfer:
+  key: ''
+  smac: ''
+  url: ''
