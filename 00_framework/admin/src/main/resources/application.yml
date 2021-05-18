@@ -71,7 +71,7 @@ spring:
         enabled: true
     mongodb:
 #      database: '@spring.data.mongodb.database@'
-#      uri: '@spring.data.mongodb.uri@'
+#      uri: '@spring.data.mongodb.uri@' 测试
       database: bizzan
       uri: mongodb://123.56.31.118:27017/bizzan
   datasource:
