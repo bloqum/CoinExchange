@@ -21,6 +21,7 @@ commission:
     real-name: 1
   promotion:
     second-level: 1
+    export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
 es:
   mine:
     index: '@es.mine.index@'
