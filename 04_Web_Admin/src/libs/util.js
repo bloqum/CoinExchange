@@ -7,14 +7,14 @@ let util = {
 
 };
 util.title = function(title) {
-    title = title || '管理后台 - 币严|全球数字资产交易平台';
+    title = title || 'BLOQUM | Cryptocurrency Exchange';
     window.document.title = title;
 };
 
 const ajaxUrl = env === 'development' ?
     'http://127.0.0.1:8888' :
     env === 'production' ?
-    'https://admin.bizzan.pro' :
+    'https://admin.bloqum.com' :
 
 util.ajax = axios.create({
     baseURL: ajaxUrl,
@@ -133,13 +133,13 @@ util.setCurrentPath = function(vm, name) {
         })[0];
         if (currentPathObj.children.length <= 1 && currentPathObj.name === 'home') {
             currentPathArr = [{
-                title: '首页',
+                title: 'Homepage',
                 path: '',
                 name: 'home_index'
             }];
         } else if (currentPathObj.children.length <= 1 && currentPathObj.name !== 'home') {
             currentPathArr = [{
-                    title: '首页',
+                    title: 'Homepage',
                     path: '/home',
                     name: 'home_index'
                 },
@@ -154,7 +154,7 @@ util.setCurrentPath = function(vm, name) {
                 return child.name === name;
             })[0];
             currentPathArr = [{
-                    title: '首页',
+                    title: 'Homepage',
                     path: '/home',
                     name: 'home_index'
                 },
@@ -182,7 +182,7 @@ util.openNewPage = function(vm, name, argu, query) {
     let i = 0;
     let tagHasOpened = false;
     while (i < openedPageLen) {
-        if (name === pageOpenedList[i].name) { // 页面已经打开
+        if (name === pageOpenedList[i].name) { // page opened
             vm.$store.commit('pageOpenedList', {
                 index: i,
                 argu: argu,
@@ -240,9 +240,9 @@ util.toDefaultPage = function(routers, name, route, next) {
 
 util.fullscreenEvent = function(vm) {
     vm.$store.commit('initCachepage');
-    // 权限菜单过滤相关
+    // Permission meny filtering
     vm.$store.commit('updateMenulist');
-    // 全屏相关
+    // Full Screen related
 };
 
 util.checkUpdate = function(vm) {
@@ -253,8 +253,8 @@ util.checkUpdate = function(vm) {
         });
         if (semver.lt(packjson.version, version)) {
             vm.$Notice.info({
-                title: 'iview-admin更新啦',
-                desc: '<p>iView-admin更新到了' + version + '了，去看看有哪些变化吧</p><a style="font-size:13px;" href="https://github.com/iview/iview-admin/releases" target="_blank">前往github查看</a>'
+                title: 'iView Admin',
+                desc: '<p>iView Admin updated' + version + ', check changes.</p><a style="font-size:13px;" href="https://github.com/iview/iview-admin/releases" target="_blank">GitHUB</a>'
             });
         }
     });
